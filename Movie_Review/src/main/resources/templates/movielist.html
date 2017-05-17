@@ -3,9 +3,131 @@
 <head>
     <title>Movies list</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" /> 
+    <meta charset="UTF-8">
+  	<link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600" rel="stylesheet">
+  	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+   <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
+ <div class="container">
+  <nav class="navbar navbar-default navbar-custom">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">       
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#about" target='_blank'><i class="fa fa-film" aria-hidden="true"></i></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="#about" target='_blank'>Home</a></li>
+        <li><a href="#about" target='_blank'>New</a></li>
+        <li><a href="#about" target='_blank'>Contact</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="#mywork">Log In</a></li>
+        <li><a href="#footer">Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<section id="header">
+    <div class="container">
+      <div class="row" id="title">
+        <div class="col-xs-12">
+          <div class="content">
+            <h1>StarS</h1>
+            <h4>Share your opions on you movie you love!</h4>
+            <button type="button" class="btn btn-default btn-lg" id="btn-join">Get started!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#mywork"><i class="fa fa-angle-double-down arrow-down" aria-hidden="true"></i></a>
+</section>
+
+<section id="movie-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Movies</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      </div>
+    </div>
+    <div class="row" class="movies">
+      <div class="col-md-3 col-sm-4 movie">
+        <div class="inner-movie">
+          <a href="#portfolioModal1" class="movie-link" data-toggle="modal">
+            <div class="movie-hover">
+              <div class="movie-hover-content">
+                <i class="fa fa-plus fa-3x more"></i>
+              </div>
+            </div>
+            <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcQW3LbpT94mtUG1PZIIzJNxmFX399wr_NcvoppJ82k7z99Hx6in" class="img-responsive" alt="">
+          </a>
+          
+          <div class="movie-caption">
+            <h4>Guardians of the Galaxy</h4>
+            <p class="text-muted">Graphic</p>
+          </div>
+        </div>
+      </div> <!--Movie item-->
+      
+       <div class="col-md-3 col-sm-4 movie">
+        <div class="inner-movie">
+          <a href="#portfolioModal1" class="movie-link" data-toggle="modal">
+            <div class="movie-hover">
+              <div class="movie-hover-content">
+                <i class="fa fa-plus fa-3x more"></i>
+              </div>
+            </div>
+            <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcQW3LbpT94mtUG1PZIIzJNxmFX399wr_NcvoppJ82k7z99Hx6in" class="img-responsive" alt="">
+          </a>
+          
+          <div class="movie-caption">
+            <h4>Round Icons</h4>
+            <p class="text-muted">Graphic Design</p>
+          </div>
+        </div>
+      </div> <!--Movie item-->
+      
+      
+      
+    </div>
+  </div>
+</section>
+
+<section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="contact-icons">
+            <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+            <p>Thu Nghiem © 2017. All Rights Reversed</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <i class="fa fa-envelope-square" aria-hidden="true"></i><span> Thu.Nghiem@myy.haaga-helia.fi</span>
+          <br />
+          <i class="fa fa-phone-square" aria-hidden="true"></i><span> +358 03 84347</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
 	<h1>Movies</h1>
     <table class="table table-striped">
 		<tr>
@@ -28,5 +150,12 @@
     	</tr>
      </table>
 	 <a href="/add">Add Movie</a>    	
+</body>
+</html>
+
+
+
+<body>
+ 
 </body>
 </html>

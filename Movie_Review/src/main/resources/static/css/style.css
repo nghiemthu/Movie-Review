@@ -1,0 +1,166 @@
+body{
+   font-family: 'Cabin', sans-serif;
+}
+
+#header {
+  position: relative;
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("https://cdn.pixabay.com/photo/2014/07/31/23/04/smartphone-407108_960_720.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 400px;
+  color: white;
+}
+
+.navbar {
+   background: #222222;
+   border-color: transparent;
+   box-shadow: 0px 0px 1px 0px rgba(34,34,34,0.5);
+}
+
+@media screen and (min-width: 768px) {
+   .navbar {
+   background: transparent;
+   border-color: transparent;
+  }
+}
+
+.navbar-custom{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.nav.navbar-nav.navbar-left li a{
+    padding-bottom: 7px;
+    color: white;
+}
+
+.nav.navbar-nav.navbar-right{
+   margin: 10px 20px;
+}
+
+.navbar-brand{
+
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.nav.navbar-nav.navbar-right li a{
+  color: white;
+  padding: 7px 23px;
+  margin: 3px;
+ 
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.nav.navbar-nav.navbar-left li a:hover{
+  border-bottom: 2px solid white;
+}
+
+.nav.navbar-nav.navbar-right li a:hover{
+  background-color: white;
+  color: black;
+}
+
+.content {
+  text-align: center;
+  margin-top: 120px;
+  padding: 0 20%;
+}
+
+.arrow-down{
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  margin-left: -7.5px;  
+  font-size: 30px;
+  font-weight: 100;
+}
+
+#btn-join{
+  background: transparent;
+  color: white;
+  border: 2px solid orange;
+}
+
+.nav>li{
+  text-align: center;
+}
+
+.navbar-default .navbar-toggle{
+  border: none;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+  background-color: transparent !important;
+}
+
+a:hover, a:visited, a:link, a:active{
+  color: white;
+}
+
+#movie-list{
+  background: #eeeeee;
+  margin: 0 auto;
+}
+
+.movie{
+  text-align: center;
+  margin: 20px 0 20px;
+}
+
+.movie-link{
+    background: white;
+    display: block;
+    position: relative;
+}
+
+.inner-movie{
+  background: white;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.movie-hover{
+    z-index: 5;
+    background: rgba(32,32,32,.8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all ease .5s;
+}
+
+.movie-hover:hover{
+    opacity: 1;
+}
+
+.movie-caption{
+   min-height: 70px; 
+}
+
+#footer{
+  position: relative;
+  min-height: 100px;
+  background: #333;
+  color: white;
+  padding: 20px;
+}
+
+#footer i{
+  font-size: 2em;
+}
+
+.contact-icons i {
+  margin-left: 5px;
+  margin-bottom: 10px;
+  
+}
+
+.more{
+  padding-top: 60%;
+}
