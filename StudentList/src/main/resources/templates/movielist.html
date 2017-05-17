@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movies list</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" /> 
+</head>
+<body>
+	<h1>Movies</h1>
+    <table class="table table-striped">
+		<tr>
+		    <th>Title</th>
+		    <th>img</th>
+		    <th>Grade</th>
+		    <th>Reviewer</th>
+		    <th>Review</th>
+		    <th>Genre</th>
+		</tr>  
+    	<tr th:each = "movie : ${movies}">
+    		<td th:text="${movie.title}"></td>
+    		<td th:text="${movie.img}"></td>
+    		<td th:text="${movie.grade}"></td>
+    		<td th:text="${movie.review}"></td>
+    		<td th:text="${movie.reviewer}"></td>
+    		<td th:text="${movie.genre}"></td>	
+ 			<td><a th:href="@{/delete/{id}(id=${movie.id})}">Delete</a></td>    
+ 			<td><a th:href="@{/show/{id}(id=${movie.id})}">More</a></td>    		
+    	</tr>
+     </table>
+	 <a href="/add">Add Movie</a>    	
+</body>
+</html>

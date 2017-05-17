@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movies list</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" /> 
+</head>
+<body>
+	<h1>Edit Movie</h1>
+	<div>
+		<form th:object="${movie}" th:action="@{update}" action="#" method="POST">
+		  	<input type="text" id="id" th:field="*{id}" th:value="${movie.id}"/>
+		  	<label for="title">Title</label>
+			<input type="text" id="title" th:field="*{title}" th:value="${movie.title}"/>
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="img">Img</label>
+			<input type="text" id="img" th:field="*{img}" th:value="${movie.img}"/>
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="grade">Grade</label>
+			<input type="text" th:field="*{grade}" th:value="${movie.grade}"/>
+			<label for="reviewer">Reviewer</label>
+			<input type="text" th:field="*{reviewer}" th:value="${movie.reviewer}"/>
+			<label for="review">Review</label>
+			<input type="text" th:field="*{review}" th:value="${movie.review}"/>
+
+			<div style="clear: both; display: block; height: 10px;"></div>						
+		  	<label for="genre">Genre</label>
+			 <select id="geplist" th:field="*{genre}" class="form-control">
+       			<option  th:each="genre: ${genres}" th:selected="(${movie.genre.name} == *{genre.name})" th:value="${genre.genreid}" th:text="${genre.name}"></option>
+    		</select>
+			
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Update"></input>
+		</form>
+	</div>   	
+</body>
+</html>

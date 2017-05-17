@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movie</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:text="${movie.title}">Movie</h1>
+	<div>
+		<img th:src="${movie.img}" th:alt="${movie.title}"/>
+		<p th:text="${movie.grade}">Welcome to our grocery store!</p>
+		<p th:text="${movie.reviewer}">Welcome to our grocery store!</p>
+		<p th:text="${movie.review}">Welcome to our grocery store!</p>
+		<p th:text="${movie.genre.name}">Welcome to our grocery store!</p>
+		<a class="btn btn-danger" th:href="@{/edit/{id}(id=${movie.id})}">Edit</a> 
+		<td><a th:href="@{/delete/{id}(id=${movie.id})}">Delete</a></td>   
+	</div>
+</body>
+</html>
