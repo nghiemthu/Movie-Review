@@ -4,7 +4,7 @@ body{
 
 #header {
   position: relative;
-  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("https://cdn.pixabay.com/photo/2014/07/31/23/04/smartphone-407108_960_720.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("cover.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -108,7 +108,7 @@ a:hover, a:visited, a:link, a:active{
   margin: 0 auto;
 }
 
-.movie{
+.movie-item{
   text-align: center;
   margin: 20px 0 20px;
 }
@@ -163,4 +163,20 @@ a:hover, a:visited, a:link, a:active{
 
 .more{
   padding-top: 60%;
+}
+
+#show{
+  min-height: 500px;
+  background:  #222222;
+  color: white;
+  padding-top: 50px;
+  text-align: center;
+}
+
+img{
+	max-width: 400px;
+}
+
+input, textarea{
+	color: black !important;
 }

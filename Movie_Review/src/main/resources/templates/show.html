@@ -1,19 +1,81 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Movie</title>
+    <title>Movies list</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8"/>
+  	<link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600" rel="stylesheet"/>
+  	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'/>
+	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'/>
+
+   <link rel="stylesheet" href="css/style.css"/> 
 </head>
 <body>
-	<h1 th:text="${movie.title}">Movie</h1>
-	<div>
-		<img th:src="${movie.img}" th:alt="${movie.title}"/>
+<div class="container">
+  <nav class="navbar navbar-default navbar-custom">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">       
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#about" target='_blank'><i class="fa fa-film" aria-hidden="true"></i></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="/movielist">Home</a></li>
+        <li><a href="/add">New</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="/login">Log In</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<section id="show">
+<h1 th:text="${movie.title}">Movie</h1>
+	<div class="movie-item inner-movie">
+		<img th:src="${movie.img}" th:alt="${movie.title}" class="img-responsive" style="max-width: 150px;"/>
 		<p th:text="${movie.grade}">Welcome to our grocery store!</p>
+		<p th:text="${movie.genre.name}">Welcome to our grocery store!</p>
 		<p th:text="${movie.reviewer}">Welcome to our grocery store!</p>
 		<p th:text="${movie.review}">Welcome to our grocery store!</p>
-		<p th:text="${movie.genre.name}">Welcome to our grocery store!</p>
-		<a class="btn btn-danger" th:href="@{/edit/{id}(id=${movie.id})}">Edit</a> 
-		<td><a th:href="@{/delete/{id}(id=${movie.id})}">Delete</a></td>   
+		<a class="btn btn-warning" th:href="@{/edit/{id}(id=${movie.id})}">Edit</a> 
+		<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${movie.id})}">Delete</a></td>   
 	</div>
+</section>
+
+<section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="contact-icons">
+            <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+            <p>Thu Nghiem © 2017. All Rights Reversed</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <i class="fa fa-envelope-square" aria-hidden="true"></i><span> Thu.Nghiem@myy.haaga-helia.fi</span>
+          <br />
+          <i class="fa fa-phone-square" aria-hidden="true"></i><span> +358 03 84347</span>
+        </div>
+      </div>
+    </div>
+  </section>
+	
+	  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 </body>
 </html>
+
+

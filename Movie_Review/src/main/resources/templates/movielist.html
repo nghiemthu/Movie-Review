@@ -3,12 +3,12 @@
 <head>
     <title>Movies list</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta charset="UTF-8">
-  	<link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600" rel="stylesheet">
-  	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <meta charset="UTF-8"/>
+  	<link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600" rel="stylesheet"/>
+  	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'/>
+	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'/>
 
-   <link rel="stylesheet" href="css/style.css"> 
+   <link rel="stylesheet" href="css/style.css"/> 
 </head>
 <body>
  <div class="container">
@@ -25,9 +25,9 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
-        <li><a href="#about" target='_blank'>Home</a></li>
-        <li><a href="#about" target='_blank'>New</a></li>
-        <li><a href="#about" target='_blank'>Contact</a></li>
+        <li><a href="/movielist">Home</a></li>
+        <li><a href="/add">New</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -62,44 +62,24 @@
         <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
       </div>
     </div>
-    <div class="row" class="movies">
-      <div class="col-md-3 col-sm-4 movie">
+    <div class="row allmovies" >
+      <div class="col-md-3 col-sm-4 movie-item" th:each = "movie : ${movies}">
         <div class="inner-movie">
-          <a href="#portfolioModal1" class="movie-link" data-toggle="modal">
+          <a th:href="@{/show/{id}(id=${movie.id})}" class="movie-link" data-toggle="modal">
             <div class="movie-hover">
               <div class="movie-hover-content">
                 <i class="fa fa-plus fa-3x more"></i>
               </div>
             </div>
-            <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcQW3LbpT94mtUG1PZIIzJNxmFX399wr_NcvoppJ82k7z99Hx6in" class="img-responsive" alt="">
+            <img th:src="${movie.img}" class="img-responsive" th:alt="${movie.title}"/>
           </a>
           
           <div class="movie-caption">
-            <h4>Guardians of the Galaxy</h4>
-            <p class="text-muted">Graphic</p>
+            <h4 th:text="${movie.title}">Guardians of the Galaxy</h4>
+            <p th:text="${movie.genre.name}" class="text-muted">Graphic</p>
           </div>
         </div>
       </div> <!--Movie item-->
-      
-       <div class="col-md-3 col-sm-4 movie">
-        <div class="inner-movie">
-          <a href="#portfolioModal1" class="movie-link" data-toggle="modal">
-            <div class="movie-hover">
-              <div class="movie-hover-content">
-                <i class="fa fa-plus fa-3x more"></i>
-              </div>
-            </div>
-            <img src="http://t2.gstatic.com/images?q=tbn:ANd9GcQW3LbpT94mtUG1PZIIzJNxmFX399wr_NcvoppJ82k7z99Hx6in" class="img-responsive" alt="">
-          </a>
-          
-          <div class="movie-caption">
-            <h4>Round Icons</h4>
-            <p class="text-muted">Graphic Design</p>
-          </div>
-        </div>
-      </div> <!--Movie item-->
-      
-      
       
     </div>
   </div>
@@ -126,36 +106,7 @@
     </div>
   </section>
   <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-
-	<h1>Movies</h1>
-    <table class="table table-striped">
-		<tr>
-		    <th>Title</th>
-		    <th>img</th>
-		    <th>Grade</th>
-		    <th>Reviewer</th>
-		    <th>Review</th>
-		    <th>Genre</th>
-		</tr>  
-    	<tr th:each = "movie : ${movies}">
-    		<td th:text="${movie.title}"></td>
-    		<td th:text="${movie.img}"></td>
-    		<td th:text="${movie.grade}"></td>
-    		<td th:text="${movie.review}"></td>
-    		<td th:text="${movie.reviewer}"></td>
-    		<td th:text="${movie.genre}"></td>	
- 			<td><a th:href="@{/delete/{id}(id=${movie.id})}">Delete</a></td>    
- 			<td><a th:href="@{/show/{id}(id=${movie.id})}">More</a></td>    		
-    	</tr>
-     </table>
-	 <a href="/add">Add Movie</a>    	
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>	
 </body>
 </html>
 
-
-
-<body>
- 
-</body>
-</html>
