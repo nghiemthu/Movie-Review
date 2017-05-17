@@ -22,7 +22,14 @@ public class MovieController {
 	@Autowired
 	private GenreRepository grepository; 
 	
-	// Show all students
+	
+	// login
+    @RequestMapping(value="/login")
+    public String login() {	
+        return "login";
+    }
+	
+	// Show all movies
     @RequestMapping(value="/movielist")
     public String movieList(Model model) {	
         model.addAttribute("movies", repository.findAll());
@@ -44,7 +51,7 @@ public class MovieController {
         return "edit";
     } 
     
-    // update new student
+    // update new movie
     @RequestMapping(value = "/edit/update", method = RequestMethod.POST)
     public String Update(Movie movie){
         repository.delete(movie.getId());
@@ -52,7 +59,7 @@ public class MovieController {
         return "redirect:../show/" + newMovie.getId();
     }
     
-    // Add new student
+    // Add new movie
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addMovie(Model model){
     	model.addAttribute("movie", new Movie());
@@ -60,27 +67,27 @@ public class MovieController {
         return "addmovie";
     }     
     
-    // Save new student
+    // Save new movie
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(Movie movie){
         repository.save(movie);
         return "redirect:movielist";
     }    
 
-    // Delete student
+    // Delete movie
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteMovie(@PathVariable("id") Long movieId, Model model) {
     	repository.delete(movieId);
         return "redirect:../movielist";
     }
   
-	// RESTful service to get all students
+	// RESTful service to get all movies
     @RequestMapping(value="/movies", method = RequestMethod.GET)
     public @ResponseBody List<Movie> movieListRest() {	
         return (List<Movie>) repository.findAll();
     }    
 
-	// RESTful service to get student by id
+	// RESTful service to get movie by id
     @RequestMapping(value="/movie/{id}", method = RequestMethod.GET)
     public @ResponseBody Movie findMovieRest(@PathVariable("id") Long movieId) {	
     	return repository.findOne(movieId);
